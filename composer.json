@@ -1,0 +1,23 @@
+{
+    "name": "mayeco/easy-annotation-bundle",
+    "license": "MIT",
+    "type": "symfony-bundle",
+    "description": "Easy annotation for Symfony2",
+    "keywords": ["annotation"],
+    "homepage": "https://github.com/mayeco/EasyAnnotationBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mario Young",
+            "email": "yo@maye.co"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "sensio/framework-extra-bundle": "3.0.*@dev"
+    },
+    "autoload": {
+        "psr-0": { "Mayeco\\EasyAnnotationBundle": "" }
+    },
+    "target-dir": "Mayeco/EasyAnnotationBundle"
+}
