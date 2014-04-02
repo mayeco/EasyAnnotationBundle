@@ -1,0 +1,9 @@
+parameters:
+    easy_annotation.event.class: Mayeco\EasyAnnotationBundle\EventListener\AnnotationListener
+
+services:
+    easy_annotation.event_subscriber:
+        class: %easy_annotation.event.class%
+        arguments: [ @service_container ]
+        tags:
+            - { name: kernel.event_subscriber }
