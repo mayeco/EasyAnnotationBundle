@@ -35,7 +35,6 @@ class AnnotationListener implements EventSubscriberInterface
             {
                 foreach($atribute as $atribute_array)
                 {
-
                     if($atribute_array instanceof ContainerAwareInterface){
                         $atribute_array->setContainer($this->container);
                     }
@@ -66,7 +65,6 @@ class AnnotationListener implements EventSubscriberInterface
             {
                 foreach($atribute as $atribute_array)
                 {
-
                     if($atribute_array instanceof ContainerAwareInterface){
                         $atribute_array->setContainer($this->container);
                     }
