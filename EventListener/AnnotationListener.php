@@ -24,33 +24,25 @@ class AnnotationListener implements EventSubscriberInterface
 
     public function onKernelController(FilterControllerEvent $event)
     {
-        if (!is_array($controller = $event->getController()))
-        {
+        if (!is_array($controller = $event->getController())) {
             return;
         }
 
-        foreach($event->getRequest()->attributes->all() as $atribute)
-        {
-            if(is_array($atribute))
-            {
-                foreach($atribute as $atribute_array)
-                {
-                    if($atribute_array instanceof ContainerAwareInterface){
-                        $atribute_array->setContainer($this->container);
-                    }
-
-                    if($atribute_array instanceof ExecutableAnnotationControllerInterface){
+        foreach($event->getRequest()->attributes->all() as $atribute) {
+            if(is_array($atribute)) {
+                foreach($atribute as $atribute_array) {
+                    if($atribute_array instanceof ExecutableAnnotationControllerInterface) {
+                        if($atribute_array instanceof ContainerAwareInterface) {
+                            $atribute_array->setContainer($this->container);
+                        }
                         $atribute_array->executeOnController($event);
                     }
                 }
-            }
-            else
-            {
-                if($atribute instanceof ContainerAwareInterface){
-                    $atribute->setContainer($this->container);
-                }
-
-                if($atribute instanceof ExecutableAnnotationControllerInterface){
+            } else {
+                if($atribute instanceof ExecutableAnnotationControllerInterface) {
+                    if($atribute instanceof ContainerAwareInterface) {
+                        $atribute->setContainer($this->container);
+                    }
                     $atribute->executeOnController($event);
                 }
             }
@@ -59,28 +51,21 @@ class AnnotationListener implements EventSubscriberInterface
 
     public function onKernelView(GetResponseForControllerResultEvent $event)
     {
-        foreach($event->getRequest()->attributes->all() as $atribute)
-        {
-            if(is_array($atribute))
-            {
-                foreach($atribute as $atribute_array)
-                {
-                    if($atribute_array instanceof ContainerAwareInterface){
-                        $atribute_array->setContainer($this->container);
-                    }
-
-                    if($atribute_array instanceof ExecutableAnnotationControllerInterface){
+        foreach($event->getRequest()->attributes->all() as $atribute) {
+            if(is_array($atribute)) {
+                foreach($atribute as $atribute_array) {
+                    if($atribute_array instanceof ExecutableAnnotationControllerInterface) {
+                        if($atribute_array instanceof ContainerAwareInterface) {
+                            $atribute_array->setContainer($this->container);
+                        }
                         $atribute_array->executeOnController($event);
                     }
                 }
-            }
-            else
-            {
-                if($atribute instanceof ContainerAwareInterface){
-                    $atribute->setContainer($this->container);
-                }
-
-                if($atribute instanceof ExecutableAnnotationViewInterface){
+            } else {
+                if($atribute instanceof ExecutableAnnotationViewInterface) {
+                    if($atribute instanceof ContainerAwareInterface) {
+                        $atribute->setContainer($this->container);
+                    }
                     $atribute->executeOnView($event);
                 }
             }
