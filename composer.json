@@ -19,5 +19,10 @@
     "autoload": {
         "psr-0": { "Mayeco\\EasyAnnotationBundle": "" }
     },
-    "target-dir": "Mayeco/EasyAnnotationBundle"
+    "target-dir": "Mayeco/EasyAnnotationBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
 }
