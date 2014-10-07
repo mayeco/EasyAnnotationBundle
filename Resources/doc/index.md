@@ -1,6 +1,0 @@
-Easy Annotation
-==================================
-
-## Prerequisites
-
-SensioFrameworkExtraBundle
