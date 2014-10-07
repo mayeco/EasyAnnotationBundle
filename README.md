@@ -1,6 +1,9 @@
 EasyAnnotationBundle
 ====================
 
+## Prerequisites
+
+SensioFrameworkExtraBundle
 
 ## Example
 
