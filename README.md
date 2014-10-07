@@ -18,6 +18,7 @@ namespace Acme\AcmeBundle\Configuration;
 
 use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ConfigurationAnnotation;
 
 use Mayeco\EasyAnnotationBundle\Configuration\ExecutableAnnotationControllerInterface;
