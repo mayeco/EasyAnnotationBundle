@@ -54,7 +54,7 @@ class AnnotationListener implements EventSubscriberInterface
         foreach($event->getRequest()->attributes->all() as $atribute) {
             if(is_array($atribute)) {
                 foreach($atribute as $atribute_array) {
-                    if($atribute_array instanceof ExecutableAnnotationControllerInterface) {
+                    if($atribute_array instanceof ExecutableAnnotationViewInterface) {
                         if($atribute_array instanceof ContainerAwareInterface) {
                             $atribute_array->setContainer($this->container);
                         }
